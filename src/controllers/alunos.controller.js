@@ -1,19 +1,17 @@
-
-
 function listar(require, response) {
-    response.send('Listar curso');
+    response.send('Listar alunos');
 };
 
 function criar(require, response) {
-    response.send('Criar curso');
+    response.send('Criar alunos');
 };
 
 function deletar(require, response) {
-    response.send('Deletar curso');
+    response.send('Deletar alunos');
 };
 
 function atualizar(require, response) {
-    response.send('Atualizar curso');
+    response.send('Atualizar alunos');
 };
 
 module.exports = {

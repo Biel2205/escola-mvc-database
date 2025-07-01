@@ -1,17 +1,30 @@
 
-// importando o módulo do express 
-const express = require('express')
+const express = require('express'); 
 
-// criando uma instância do express 
-const app= express()
+// Controllers
+const cursoController = require('./controllers/curso.controller');
+const alunoController = require('./controllers/alunos.controller');
+const professorController = require('./controllers/professor.controller');
 
-//importação dos controller
-const cursoController = require('./controllers/curso.controller')
 
-// criar uma rota 
-app.get('/cursos',cursoController.listar )
+const app = express();
 
-// iniciando o servidor na porta 3000
-app.listen(3000,function(){
-    console.log("servidor rodando na porta 3000")
-})
+// Criar uma rota para a raiz do servidor
+app.get('/cursos', cursoController.listar);
+app.post('/cursos', cursoController.criar);
+app.delete('/cursos/:id', cursoController.deletar);
+app.put('/cursos/:id', cursoController.atualizar);
+
+app.get('/alunos', alunoController.listar);
+app.post('/alunos', alunoController.criar);
+app.delete('/alunos/:id', alunoController.deletar);
+app.put('/alunos/:id', alunoController.atualizar);
+
+app.get('/professores', professorController.listar);
+app.post('/professores', professorController.criar);
+app.delete('/professores/:id', professorController.deletar);
+app.put('/professores/:id', professorController.atualizar);
+
+app.listen(3000, () => {
+  console.log('Servidor rodando na porta 3000');
+});
