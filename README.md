@@ -26,5 +26,5 @@ Este projeto é um sistema backend desenvolvido com Node.js utilizando o padrão
 1. Clone o repositório
 2. Instale as dependências:
 
-```bash
+``bash
 npm install
